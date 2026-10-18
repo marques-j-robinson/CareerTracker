@@ -35,8 +35,20 @@ function countApplications(applications: JobApplication[]): number {
   return applications.length
 }
 
+function getApplicationsByCompany(
+  applications: JobApplication[],
+  company: JobApplication['company'],
+): JobApplication[] {
+  return applications.filter((application) => application.company === company)
+}
+
 console.log('Total:', countApplications(applications))
 console.log(
   'Interviews:',
   getApplicationsByStatus(applications, 'interviewing'),
+)
+
+console.log(
+  'Summit Systems',
+  getApplicationsByCompany(applications, 'Summit Systems'),
 )
