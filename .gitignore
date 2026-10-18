@@ -1,0 +1,98 @@
+# ==========================================
+# TypeScript & Build Outputs
+# ==========================================
+# Compiled JavaScript files (if building next to source)
+# Remove this if you intentionally commit compiled JS files
+*.js
+*.js.map
+*.d.ts
+*.d.ts.map
+
+# Standard build output directories
+dist/
+build/
+out/
+/out-tsc
+
+# TS build info cache (used for incremental builds)
+*.tsbuildinfo
+
+# ==========================================
+# Dependencies
+# ==========================================
+node_modules/
+jspm_packages/
+web_modules/
+
+# ==========================================
+# Logs & Diagnostics
+# ==========================================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# ==========================================
+# Environment Variables & Secrets
+# ==========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+
+# (Optional) Allow committing an example template file
+!.env.example
+
+# ==========================================
+# Testing & Code Quality Caches
+# ==========================================
+coverage/
+.nyc_output/
+.eslintcache
+.stylelintcache
+.prettiercache
+.jest/
+.cache/
+
+# ==========================================
+# IDEs and Editors
+# ==========================================
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ / WebStorm / JetBrains
+.idea/
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Diagnostics & Crash reports
+.elst/
+
+# ==========================================
+# Operating System Files
+# ==========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
