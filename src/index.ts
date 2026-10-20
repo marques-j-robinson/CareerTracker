@@ -60,7 +60,7 @@ function getApplicationsByCompany(
   }
   const res = applications.filter(
     (application) =>
-      application.company.toLowerCase() === company.toLowerCase(),
+      application.company.trim().toLowerCase() === company.trim().toLowerCase(),
   )
   if (!res.length) {
     return `No Applications Found while searching company: ${company}`
