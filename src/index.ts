@@ -34,8 +34,14 @@ const applications: JobApplication[] = [
 function getApplicationsByStatus(
   applications: JobApplication[],
   status: JobApplication['status'],
-): JobApplication[] {
-  return applications.filter((application) => application.status === status)
+): JobApplication[] | string {
+  const res = applications.filter(
+    (application) => application.status === status,
+  )
+  if (res.length === 0) {
+    return `No Applications Found while searching status: ${status}`
+  }
+  return res
 }
 
 function countApplications(applications: JobApplication[]): number {
@@ -45,17 +51,21 @@ function countApplications(applications: JobApplication[]): number {
 function getApplicationsByCompany(
   applications: JobApplication[],
   company: JobApplication['company'],
-): JobApplication[] {
-  return applications.filter(
+): JobApplication[] | string {
+  const res = applications.filter(
     (application) =>
       application.company.toLowerCase() === company.toLowerCase(),
   )
+  if (!res.length) {
+    return `No Applications Found while searching company: ${company}`
+  }
+  return res
 }
 
 console.log('Total:', countApplications(applications))
 console.log(
   'Interviews:',
-  getApplicationsByStatus(applications, 'interviewing'),
+  getApplicationsByStatus(applications, 'phone-screening'),
 )
 
 console.log(
