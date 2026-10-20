@@ -35,6 +35,9 @@ function getApplicationsByStatus(
   applications: JobApplication[],
   status: JobApplication['status'],
 ): JobApplication[] | string {
+  if (!status.length) {
+    return 'Empty status input'
+  }
   const res = applications.filter(
     (application) => application.status === status,
   )
@@ -52,6 +55,9 @@ function getApplicationsByCompany(
   applications: JobApplication[],
   company: JobApplication['company'],
 ): JobApplication[] | string {
+  if (!company.length) {
+    return 'Empty company input'
+  }
   const res = applications.filter(
     (application) =>
       application.company.toLowerCase() === company.toLowerCase(),
