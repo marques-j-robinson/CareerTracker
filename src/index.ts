@@ -39,7 +39,10 @@ function getApplicationsByCompany(
   applications: JobApplication[],
   company: JobApplication['company'],
 ): JobApplication[] {
-  return applications.filter((application) => application.company === company)
+  return applications.filter(
+    (application) =>
+      application.company.toLowerCase() === company.toLowerCase(),
+  )
 }
 
 console.log('Total:', countApplications(applications))
@@ -50,5 +53,5 @@ console.log(
 
 console.log(
   'Summit Systems',
-  getApplicationsByCompany(applications, 'Summit Systems'),
+  getApplicationsByCompany(applications, 'summit Systems'),
 )
