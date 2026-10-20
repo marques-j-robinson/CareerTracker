@@ -22,6 +22,13 @@ const applications: JobApplication[] = [
     jobTitle: 'Software Engineer',
     status: 'interested',
   },
+  {
+    id: '4',
+    company: 'Tesla',
+    jobTitle: 'Full-Stack Engineer',
+    status: 'interviewing',
+    dateApplied: '2026-10-18',
+  },
 ]
 
 function getApplicationsByStatus(
